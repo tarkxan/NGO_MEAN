@@ -1,5 +1,5 @@
 # NGO_MEAN
-    NGO Donation Application inmplemented in Node.js and Angular
+    NGO Donation Application implemented in Node.js and Angular
 
     Donation website allows users to register, to login into the system and to select donation types they want to make donations for.
 
