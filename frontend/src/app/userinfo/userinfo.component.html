@@ -1,0 +1,124 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<form #userform="ngForm" (ngSubmit)="onSubmit(userform)">
+
+
+<table class="table">
+  <thead>
+
+      <tr>
+          <td><label>First Name:</label></td>
+          <td><input type="text" class="col-sm-5" name="firstname" [(ngModel)]="user.firstname"></td>
+        </tr>
+        <tr>
+          <td><label>Last Name:</label></td>
+          <td><input type="text" class="col-sm-5" name="lastname" [(ngModel)]="user.lastname"></td>
+        </tr>
+        <tr *ngIf="u_role == 'user';" >
+        <!-- <tr *ngIf=this.isAdmin > -->
+          <td><label>CMA#:</label></td>
+          <td><input type="text" class="col-sm-5" name="cma" [(ngModel)]="user.cma"></td>
+        </tr>
+        <tr *ngIf="u_role == 'user';" >
+        <!-- <tr *ngIf=this.isAdmin > -->
+          <td><label>Phone:</label></td>
+          <td><input type="text" class="col-sm-5" name="phone" [(ngModel)]="user.phone"></td>
+        </tr>
+        <tr>
+          <td><label>Email Address:</label></td>
+          <td *ngIf="u_role == 'user'; then thenBlock; else elseBlock"></td>
+
+            <ng-template #thenBlock>
+                <td><input type="text" class="col-sm-5" name="email" [(ngModel)]="user.email" disabled=true></td>
+            </ng-template>
+            <ng-template #elseBlock>
+                <td><input type="text" class="col-sm-5" name="email" [(ngModel)]="user.email" ></td>
+            </ng-template>
+        </tr>
+        <tr *ngIf="u_role == 'admin';" >
+            <td><label>Role:</label></td>
+            <td><input type="text" class="col-sm-5" name="role" [(ngModel)]="user.role" ></td>
+          </tr>
+        <tr *ngIf="u_role == 'user';" >
+            <td><label>Address1:</label></td>
+            <td><input type="text" class="col-sm-5" name="address1" [(ngModel)]="user.address1"></td>
+          </tr>
+          <tr *ngIf="u_role == 'user';" >
+            <td><label>Address2:</label></td>
+            <td><input type="text" class="col-sm-5" name="address2" [(ngModel)]="user.address2"></td>
+          </tr>
+          <tr *ngIf="u_role == 'user';" >
+            <td><label>City:</label></td>
+            <td><input type="text" class="col-sm-5" name="city" [(ngModel)]="user.city"></td>
+          </tr>
+          <tr *ngIf="u_role == 'user';" >
+            <td><label>State:</label></td>
+            <td><input type="text" class="col-sm-5" name="state" [(ngModel)]="user.state"></td>
+          </tr>
+          <tr *ngIf="u_role == 'user';" >
+            <td><label>Zip/Postal Code:</label></td>
+            <td><input type="text" class="col-sm-5" name="zip" [(ngModel)]="user.zip"></td>
+          </tr>
+          <tr *ngIf="u_role == 'user';" >
+            <td><label>Country:</label></td>
+            <td><input type="text" class="col-sm-5" name="country" [(ngModel)]="user.country"></td>
+          </tr>
+          <tr align="center">
+            <td colspan="10">
+              <button type="submit" class="btn btn-secondary" style="margin-right: 50px;">Save and Continue</button>
+              <button [routerLink]="['/donationslist']" class="btn btn-secondary" style="margin-right: 50px;">Cancel</button>
+            </td>
+          </tr>
+  </thead>
+
+</table>
+
+</form>
+<!--
+<table>
+    <tr>
+      <td><label>First Name:</label></td>
+      <td><input type="text" class="col-sm-4" name="firstname" [(ngModel)]="user.firstname"></td>
+    </tr>
+    <tr>
+      <td><label>Last Name:</label></td>
+      <td><input type="text" class="col-sm-4" name="lastname" [(ngModel)]="user.lastname"></td>
+    </tr>
+    <tr>
+      <td><label>CMA#:</label></td>
+      <td><input type="text" class="col-sm-4" name="cma" [(ngModel)]="user.cma"></td>
+    </tr>
+    <tr>
+      <td><label>Phone:</label></td>
+      <td><input type="text" class="col-sm-4" name="phone" [(ngModel)]="user.phone"></td>
+    </tr>
+    <tr>
+      <td><label>Email Address:</label></td>
+      <td><input type="text" class="col-sm-4" name="email" [(ngModel)]="user.email"></td>
+    </tr>
+    <div class="form-group" name="address">
+      <tr>
+        <td><label>Address1:</label></td>
+        <td><input type="text" class="col-sm-4" name="address1" [(ngModel)]="user.address1"></td>
+      </tr>
+      <tr>
+        <td><label>Address2:</label></td>
+        <td><input type="text" class="col-sm-4" name="cma" [(ngModel)]="user.address2"></td>
+      </tr>
+      <tr>
+        <td><label>City:</label></td>
+        <td><input type="text" class="col-sm-4" name="cma" [(ngModel)]="user.city"></td>
+      </tr>
+      <tr>
+        <td><label>State:</label></td>
+        <td><input type="text" class="col-sm-4" name="address1" [(ngModel)]="user.state"></td>
+      </tr>
+      <tr>
+        <td><label>Zip/Postal Code:</label></td>
+        <td><input type="text" class="col-sm-4" name="cma" [(ngModel)]="user.zip"></td>
+      </tr>
+      <tr>
+        <td><label>Country:</label></td>
+        <td><input type="text" class="col-sm-4" name="cma" [(ngModel)]="user.address.country"></td>
+      </tr>
+    </div>
+  </table> -->

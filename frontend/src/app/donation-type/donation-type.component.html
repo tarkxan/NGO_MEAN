@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC|Patua+One|Playfair+Display|Libre+Baskerville" rel="stylesheet">
+
+<body>
+
+  <section>
+
+    <!-- <router-outlet></router-outlet> -->
+    <div class="content" *ngIf="isAdmin">
+        <h2 class="mb-5">Manage Donation Types</h2>
+
+        <table class="table">
+          <thead>
+              <tr>
+                <th scope="col">Donation Type</th>
+                <th scope="col">Is Active</th>
+                <th scope="col">Monthly Billing</th>
+                <th scope="col"><button (click)="addNewType()" class="btn btn-secondary">Add new</button></th>
+              </tr>
+          </thead>
+          <tbody *ngFor="let donation_type of donationTypes;"
+                  [class.selected]="donation_type === donationType"
+                  (click)="onSelect(donation_type)">
+              <tr>
+                <td> {{ donation_type.type_name }} </td>
+                <td> <input type="checkbox" [checked] = "donation_type.is_active" disabled=true> </td>
+                <td> <input type="checkbox" [checked] = "donation_type.monthly_recurrence" disabled=true> </td>
+                <td> <button (click)="onSelect(donation_type)" class="btn btn-secondary">Edit</button></td>
+              </tr>
+          </tbody>
+        </table>
+        <app-donation-type-detail [donation_type]="donationType"></app-donation-type-detail>
+    </div>
+
+    <div class="content" *ngIf="isAdmin == false">
+        <h2 class="mb-5">Manage Donation Types</h2>
+
+        <table  class="table">
+          <thead>
+            <tr>
+              <th scope="col">Donation Type</th>
+              <th scope="col">Monthly Billing</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let donation_type of donationTypes">
+            <tr>
+              <td> {{ donation_type.type_name }} </td>
+              <td> <input type="checkbox" [checked] = "donation_type.monthly_recurrence" disabled=true> </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+
+  </section>
+
+</body>

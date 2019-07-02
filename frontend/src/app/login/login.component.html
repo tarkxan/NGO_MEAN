@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <div class="userAuthentication">
+    <form #loginForm>
+      <h1>{{isLoggingIn ? "LOGIN" : "SIGN UP"}}</h1>
+      <!-- <div class="thirdPartyAuth">
+        <div class="authStrat">
+          <svg width="50px" height="50px"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 96.124 96.123" style="enable-background:new 0 0 96.124 96.123;" xml:space="preserve"><g><path d="M72.089,0.02L59.624,0C45.62,0,36.57,9.285,36.57,23.656v10.907H24.037c-1.083,0-1.96,0.878-1.96,1.961v15.803c0,1.083,0.878,1.96,1.96,1.96h12.533v39.876c0,1.083,0.877,1.96,1.96,1.96h16.352c1.083,0,1.96-0.878,1.96-1.96V54.287h14.654c1.083,0,1.96-0.877,1.96-1.96l0.006-15.803c0-0.52-0.207-1.018-0.574-1.386c-0.367-0.368-0.867-0.575-1.387-0.575H56.842v-9.246c0-4.444,1.059-6.7,6.848-6.7l8.397-0.003c1.082,0,1.959-0.878,1.959-1.96V1.98C74.046,0.899,73.17,0.022,72.089,0.02z"/></g></svg>
+        </div>
+        <div class="authStrat">
+            <svg version="1.1" id="google" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve"><g><path d="M21.3,27.4c0,1.8,0,3.6,0,5.4c3,0.1,6,0.1,9,0.1C29,39.6,20,41.7,15.2,37.4c-4.9-3.8-4.7-12.2,0.4-15.7c3.6-2.9,8.7-2.2,12.3,0.3c1.4-1.3,2.7-2.7,4-4.1c-3-2.4-6.6-4.1-10.5-3.9c-8.1-0.3-15.6,6.8-15.7,15c-0.5,6.6,3.9,13.2,10,15.5c6.1,2.4,14,0.8,18-4.8c2.6-3.5,3.1-8,2.8-12.2C31.4,27.4,26.3,27.4,21.3,27.4z"/><path d="M50.7,27.4c0-1.5,0-3,0-4.5c-1.5,0-3,0-4.5,0c0,1.5,0,3,0,4.5c-1.5,0-3,0-4.5,0c0,1.5,0,3,0,4.5c1.5,0,3,0,4.5,0c0,1.5,0,3,0,4.5c1.5,0,3,0,4.5,0c0-1.5,0-3,0-4.5c1.5,0,3,0,4.5,0c0-1.5,0-3,0-4.5C53.7,27.4,52.2,27.4,50.7,27.4z"/></g></svg>
+        </div>
+        <div class="authStrat">
+          <svg width="50px" height="50px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 430.117 430.117" style="enable-background:new 0 0 430.117 430.117;" xml:space="preserve"><g><path d="M430.117,261.543V420.56h-92.188V272.193c0-37.271-13.334-62.707-46.703-62.707c-25.473,0-40.632,17.142-47.301,33.724c-2.432,5.928-3.058,14.179-3.058,22.477V420.56h-92.219c0,0,1.242-251.285,0-277.32h92.21v39.309c-0.187,0.294-0.43,0.611-0.606,0.896h0.606v-0.896c12.251-18.869,34.13-45.824,83.102-45.824C384.633,136.724,430.117,176.361,430.117,261.543z M52.183,9.558C20.635,9.558,0,30.251,0,57.463c0,26.619,20.038,47.94,50.959,47.94h0.616c32.159,0,52.159-21.317,52.159-47.94C103.128,30.251,83.734,9.558,52.183,9.558z M5.477,420.56h92.184v-277.32H5.477V420.56z"/></g></svg>
+        </div>
+      </div> -->
+
+
+
+      <span id="authMethod" (click)="changeAuthMethod()">Don't have an account? Sign Up!</span>
+      <input type="text" name="email" id="email" placeholder="Email" required #userEmail>
+      <input type="password" name="password" id="password" placeholder="Password" required #userPassword>
+      <input *ngIf="!isLoggingIn" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required #userConfirmedPassword>
+      <span id="errorMsg"></span>
+      <button id='submitBtn' (click)='login(loginForm)'>Login</button>
+    </form>
+  </div>
+</div>

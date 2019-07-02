@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<form #cartform="ngForm" (ngSubmit)="onSubmit(cartform)">
+  <table width="75%" class="table">
+
+    <tr>
+      <td>Item Description</td>
+      <td>Remove</td>
+      <td>Amount</td>
+      <td>Total</td>
+    </tr>
+    <tr *ngFor="let d of donations; ">
+      <td align="right"><label>{{d.donationtypestr}}</label></td>
+      <td><a (click)="removeDonation(d.type_name)" >remove</a></td>
+      <td><label>{{d.amount}}</label></td>
+      <td><label>{{ d.amount }}</label></td>
+    </tr>
+    <tr><td>Total Amount:</td><td>${{ totalamount }}</td></tr>
+  </table>
+
+  <table class="table">
+    <tr><td>{{ donations.length }}item in cart</td></tr>
+    <tr><td><a (click)="continueShopping()">Continue Shopping</a></td></tr>
+    <tr><td>ItemSubTotal:{{ totalamount }}</td></tr>
+    <tr><td><button type="submit" class="btn btn-secondary">Proceed to checkout</button></td></tr>
+  </table>
+
+</form>

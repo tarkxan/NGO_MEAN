@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<form #frmDonations="ngForm" >
+
+  <table class="table">
+    <thead>
+
+      <th scope="col">Donation Type</th>
+      <th scope="col"></th>
+      <th scope="col">Donation Amount</th>
+      <th scope="col">Check for Monthly Billing</th>
+
+      <tr *ngFor="let d of type_names;let i = index;">
+        <ng-container *ngIf="d.is_active;">
+          <td name="donation_type" >{{d.type_name}}
+              <input type="hidden" class="form-control" name="donation_type_id{{i}}"  [ngModel]="d._id">
+              <input type="hidden" class="form-control" name="type_name{{i}}"  [ngModel]="d.type_name">
+          </td>
+          <td><label>&nbsp;$&nbsp;</label></td>
+          <td><input type="text" class="form-control" name="amount{{i}}" [ngModel] class="col-sm-4"></td>
+          <td><input type="checkbox" class="form-control" name="monthly_recurrence{{i}}" [ngModel]></td>
+        </ng-container>
+      </tr>
+
+    </thead>
+
+  </table>
+  <!-- <button type="reset" class="btn btn-secondary" style="margin:10px;" (click)="onCancel()" >Cancel</button>
+  <button (click)="onSubmit(frmDonations)" class="btn btn-secondary" style="margin:10px;">Continue</button> -->
+  <div align="center">
+    <td colspan="10">
+        <button type="reset" class="btn btn-secondary" style="margin-right: 50px;" (click)="onCancel()" >Cancel</button>
+        <button (click)="onSubmit(frmDonations)" class="btn btn-secondary" style="margin-right: 50px;">Continue</button>
+    </td>
+  </div>
+
+</form>
+
+
+

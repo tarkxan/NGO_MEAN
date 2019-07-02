@@ -1,0 +1,59 @@
+<h1>USER MANAGER</h1>
+<table mdbTable>
+  <thead>
+    <tr>
+      <th *ngFor="let head of displayedColumns" scope="col">{{head}} </th>
+    </tr>
+  </thead>
+  <tbody #userTableBody>
+    <tr #userItem *ngFor="let el of dataSource" data-id={{el._id}} title="ID: {{el._id}}" (ngSubmit)="editUser()"
+      [ngClass]="el._id ? '':'active'">
+      <!-- <td scope="row">
+        <input type="text" name="firstName" value="{{el.firstName}}" [disabled]=el.firstName>
+      </td> -->
+      <td scope="row">
+        <input type="text" name="firstName" [(ngModel)]="el.firstname">
+      </td>
+      <!-- <td scope="row">
+        <input type="text" name="lastName" value="{{el.lastName}}" [disabled]=el.lastName>
+      </td> -->
+      <td scope="row">
+        <input type="text" name="lastName" [(ngModel)]="el.lastname">
+      </td>
+      <!-- <td scope="row">
+        <input type="email" name="email" value="{{el.email}}" [disabled]=el.email>
+      </td> -->
+      <td scope="row">
+        <input type="email" name="email" [(ngModel)]="el.email">
+      </td>
+      <!-- <td scope="row">
+        <input type="{{el.password ? 'password':'text'}}" name="password" value="{{el.password}}" [disabled]=el.password>
+      </td> -->
+      <td scope="row">
+        <input type="{{el.password ? 'password':'text'}}" name="password" [(ngModel)]="el.password">
+      </td>
+      <td scope="row">
+        <!-- <input type="text" name="role" value="{{el.role}}" [disabled]=el.role> -->
+        <!-- <select name="role" value="{{el.role}}" [disabled]=el.role>
+          <option value="User">User</option>
+          <option value="Admin">Admin</option>
+        </select> -->
+        <select name="role" [(ngModel)]="el.role">
+          <option value="User">User</option>
+          <option value="Admin">Admin</option>
+        </select>
+      </td>
+      <td>
+        <!-- <button class="editBtn" [ngClass]="el._id ? '':'editBtn-active'" #editBtn (click)="editUser(el, userItem)">EDIT</button> -->
+        <!-- <button class="editBtn" [ngClass]="el._id ? '':'editBtn-active'" #editBtn (click)="editUser(el, userItem)">EDIT</button> -->
+        <button class="deleteBtn" [ngClass]="el._id ? '':'deleteBtn-active'" #deleteBtn (click)="deleteUser(el)">DELETE</button>
+        <!-- <button class="saveBtn" [ngClass]="el._id ? '':'saveBtn-active'" #saveBtn (click)="saveUser(el)" [disabled]=el._id>SAVE</button> -->
+        <button class="saveBtn" [ngClass]="el._id ? '':'saveBtn-active'" #saveBtn (click)="saveUser(el, userItem)">SAVE</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p *ngIf=hasError style="color:orangered; text-align:center; width:100%;">{{errMsg}}</p>
+<div class="addBtnContainer">
+  <button class="addUserBtn" (click)="addUser(userTableBody)">Add User</button>
+</div>

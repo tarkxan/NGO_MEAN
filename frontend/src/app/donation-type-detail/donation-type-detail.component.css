@@ -1,0 +1,7 @@
+label{
+  padding: 25px;
+}
+
+#submitButton, #cancelButton{
+  margin-left: 6em;
+}

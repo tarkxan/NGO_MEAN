@@ -1,0 +1,38 @@
+<!-- Slider here -->
+<header>
+
+  <h1 class="centerMessage">EVERY PENNY COUNTS</h1>
+  <div id="slider">
+    <figure>
+      <img class="img2" src="../../assets/home page img1.jpg" alt>
+      <img class="img2" src="../../assets/home page img2.jpg" alt>
+      <img class="img2" src="../../assets/home page img3.jpg" alt>
+
+    </figure>
+  </div>
+
+
+</header>
+<h2>You have not lived until you have done something for someone who can never repay you</h2>
+
+<!-- Slider upto Here -->
+
+<div class="gridViewContainer">
+
+  <div class="gridView">
+
+    <div class="card" *ngFor='let charity of charities' routerLink='../personalInfo'>
+      <img class="card-img" src="{{charity.imgUrl}}">
+      <div class="card-body">
+        <div class="card-textWrapper">
+          <h2 class="card-title">{{charity.charityName}}</h2>
+          <p class="card-text">{{charity.charityDescription}}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<footer style="width: 98%; background:#111; color: #eee; text-align:center; padding: 1rem;">A Project by Muhammad, Oleg, Kanchan</footer>

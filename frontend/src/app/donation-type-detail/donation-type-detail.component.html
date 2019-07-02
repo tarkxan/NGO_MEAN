@@ -1,0 +1,25 @@
+<div *ngIf="donation_type">
+
+  <h5 class="mb-5">Edit Donation Type: {{ donation_type.type_name }}</h5>
+  <div>
+
+      <label>Type Name:
+          <input type="text" [(ngModel)] = "donation_type.type_name"/>
+      </label>
+
+      <label>Is Active:
+        <input type="checkbox" [(ngModel)] = "donation_type.is_active"/>
+      </label>
+
+      <label>Monthly Billing:
+        <input type="checkbox" [(ngModel)] = "donation_type.monthly_recurrence"/>
+      </label>
+
+  </div>
+  <div>
+      <button id = "submitButton" type="submit" (click)="onSubmit(donation_type._id, donation_type.type_name, donation_type.is_active, donation_type.monthly_recurrence)" class="btn btn-secondary">Submit</button>
+      <button id = "cancelButton" type="submit" (click)="onCancel()" class="btn btn-secondary">Cancel</button>
+  </div>
+
+
+</div>

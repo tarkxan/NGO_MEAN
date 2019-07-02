@@ -1,0 +1,113 @@
+.wrapper {
+  width: 80%;
+  min-height: 400px;
+  height: fit-content;
+  text-align: center;
+  margin: auto;
+
+}
+
+.userAuthentication{
+  padding-top: 3rem;
+}
+
+form {
+  position: relative;
+  margin: auto;
+  width: 720px;
+  display: grid;
+  grid-template-rows: 2rem 5rem 1rem 3.5rem 3.5rem 3.5rem 3rem;
+  grid-row-gap: 1rem;
+  align-items: center;
+  justify-items: center;
+}
+
+h1 {
+  grid-row: 1/2;
+  font-size: 2.5rem;
+  font-weight: black;
+  letter-spacing: 2px;
+}
+
+.thirdPartyAuth {
+  grid-row: 2/3;
+  display: flex;
+  width: 50%;
+  align-content: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* .authStrat{
+  width: 40px;
+  height: 40px;
+  padding: 1rem;
+  margin: 1rem;
+  cursor: pointer;
+  border: thin solid black;
+  border-radius: 70px;
+  transition: all ease .3s;
+} */
+
+.authStrat:hover{
+  background: black;
+  fill: white;
+}
+
+.authStrat svg{
+  width: 40px;
+  height: 40px;
+}
+
+.authStrat svg#google{
+  width: 45px;
+  height: 45px;
+}
+
+#authMethod {
+  grid-row: 3/4;
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  height: 3.5rem;
+  border-radius: 5px;
+  width: 90%;
+  background: #eee;
+  padding: 0 .5rem;
+  font-size: 1.2rem;
+}
+
+#email {
+  grid-row: 4/5;
+}
+
+#password {
+  grid-row: 5/6;
+}
+
+#errorMsg {
+  /* grid-row: 6/7; */
+  color: orangered;
+  cursor: pointer;
+}
+
+button {
+  grid-row: 7/8;
+  border: solid 3px black;
+  color: black;
+  border-radius: 1.5rem;
+  width: 300px;
+  height: 3rem;
+  background: transparent;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all ease .3s;
+}
+
+button:hover{
+  color: white;
+  background: black;
+}

@@ -1,0 +1,118 @@
+button {
+  margin: auto;
+  color: rgb(84, 84, 84);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: none;
+  border-radius: 45px;
+  border: thin solid black;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover{
+  transform: translateY(-1.5px);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100% ;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #111;
+  color: white;
+}
+
+td input{
+  font-size: 1.2rem;
+  width: 100%;
+  border: none;
+  background: none;
+  padding: 5px;
+}
+
+h1{
+  background:#111;
+  color:white;
+  width: fit-content;
+  padding: 1rem;
+  margin: 0;
+}
+
+.editBtn{
+  margin: 0 5px;
+}
+
+.editBtn:hover{
+  background: #83B3E4;
+  color: #fff;
+  border: none;
+}
+
+.editBtn-active{
+  display: none;
+}
+
+.deleteBtn{
+  margin: 0 5px;
+}
+
+.deleteBtn:hover{
+  background: hsl(16, 77%, 47%);
+  color: #fff;
+  border: none;
+}
+
+.deleteBtn-active {
+  display: none;
+}
+
+tr.active td input{
+  border: thin solid black;
+}
+
+.saveBtn{
+  /* visibility: hidden; */
+}
+
+.saveBtn-active{
+  visibility: visible;
+}
+.saveBtn-active:hover{
+  background: #2EE59D;
+  color: #fff;
+  border: none;
+}
+
+.addBtnContainer{
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 20% auto;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.addUserBtn{
+  position: relative;
+  width: 300px;
+  height: 3rem;
+  grid-column: 2/3;
+}
+
+.addUserBtn:hover{
+  background: #eee;
+  /* color: #fff; */
+  border: none;
+}
+
+

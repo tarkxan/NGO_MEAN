@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC|Patua+One|Playfair+Display|Libre+Baskerville" rel="stylesheet">
+
+<body>
+
+    <!-- <router-outlet></router-outlet> -->
+    <h2 class="mb-5" align="center">List of Donations</h2>
+    <div>
+        <!-- <button [routerLink]="['/makedonation']" class="btn btn-secondary">New Donation</button> -->
+        <button [routerLink]="['/userinfo']" class="btn btn-secondary">New Donation</button>
+    </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Donation Type</th>
+            <th scope="col">Donation Amount</th>
+            <th scope="col">Monthly Billing</th>
+            <!-- <th scope="col">Donation Date</th> -->
+          </tr>
+        </thead>
+
+        <tbody>
+          <tbody *ngFor="let donatRow of displayList">
+            <tr>
+              <td> {{ donatRow.first_name }} </td>
+              <td> {{ donatRow.last_name }} </td>
+              <td> {{ donatRow.type_name }} </td>
+              <td> {{ donatRow.amount }} </td>
+              <td> <input type="checkbox" [checked] = "donatRow.monthly_recurrence != false" disabled=true> </td>
+              <!-- <td> {{ donatRow.donation_date }} </td> -->
+            </tr>
+        </tbody>
+
+      </table>
+        <!-- <app-donation-type-detail [donation_type]="donationType"></app-donation-type-detail> -->
+
+  <br>
+
+</body>
